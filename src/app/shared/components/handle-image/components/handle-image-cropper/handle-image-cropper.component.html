@@ -28,27 +28,35 @@
       <mat-icon>delete_forever</mat-icon>
   </button>
 </div>
-<div class="editor">
-  <image-cropper
-      [imageFile]="imageChangedEvent"
-      [imageChangedEvent]="imageChangedEvent"
-      [maintainAspectRatio]="true"
-      [containWithinAspectRatio]="containWithinAspectRatio"
-      [aspectRatio]="4 / 3"
-      [resizeToWidth]="256"
-      [cropperMinWidth]="128"
-      [onlyScaleDown]="true"
-      [roundCropper]="false"
-      [canvasRotation]="canvasRotation"
-      [transform]="transform"
-      [alignImage]="'left'"
-      [style.display]="showCropper ? null : 'none'"
-      format="png"
-      (imageCropped)="imageCropped($event)"
-      (imageLoaded)="imageLoaded()"
-      (cropperReady)="cropperReady($event)"
-      (loadImageFailed)="loadImageFailed()"
-  ></image-cropper>
-</div>
-<img [src]="croppedImage" class="cropp-image" />
+
+<ng-container>
+  <div class="editor">
+    <h3>imagen a Editar</h3>
+    <image-cropper
+        [imageFile]="imageChangedEvent"
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [containWithinAspectRatio]="containWithinAspectRatio"
+        [aspectRatio]="4 / 3"
+        [resizeToWidth]="256"
+        [cropperMinWidth]="128"
+        [onlyScaleDown]="true"
+        [roundCropper]="false"
+        [canvasRotation]="canvasRotation"
+        [transform]="transform"
+        [alignImage]="'left'"
+        [style.display]="showCropper ? null : 'none'"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (cropperReady)="cropperReady($event)"
+        (loadImageFailed)="loadImageFailed()"
+    ></image-cropper>
+    <h3>Resultado</h3>
+    <div class="cropp-image">
+      <img [src]="croppedImage" />
+    </div>
+  </div>
+</ng-container>
+
 

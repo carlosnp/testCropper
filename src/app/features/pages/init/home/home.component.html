@@ -1,1 +1,14 @@
 <p>home works!</p>
+aqui esta
+<mat-card class="cropped">
+  <app-image-dropzone
+      *ngIf="!imagefile"
+      (fileChange)="getFile($event)"
+  ></app-image-dropzone>
+  <app-handle-image-cropper
+      *ngIf="imagefile"
+      [sourceFile]="imagefile"
+      (restore)="restart()"
+  ></app-handle-image-cropper>
+</mat-card>
+

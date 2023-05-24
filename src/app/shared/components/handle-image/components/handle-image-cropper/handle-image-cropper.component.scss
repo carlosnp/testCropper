@@ -24,5 +24,6 @@
 
 .cropp-image {
   width: 100% !important;
-  height: 200px;
+  height: 100% !important;
+  object-fit: contain;
 }

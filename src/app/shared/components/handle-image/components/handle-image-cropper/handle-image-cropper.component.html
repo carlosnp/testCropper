@@ -30,6 +30,7 @@
 </div>
 <div class="editor">
   <image-cropper
+      [imageFile]="imageChangedEvent"
       [imageChangedEvent]="imageChangedEvent"
       [maintainAspectRatio]="true"
       [containWithinAspectRatio]="containWithinAspectRatio"

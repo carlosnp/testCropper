@@ -1,0 +1,27 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+.editor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 1px solid red;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+// Botones para editar la imagen
+.control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: inherit;
+  justify-content:space-around;
+  align-items: center;
+  border: 1px solid blue;
+}
+
+.cropp-image {
+  width: 100% !important;
+  height: 200px;
+}

@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.dropzone {
+  height: 150px;
+  border: 4px dashed #666;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+
+  mat-icon {
+      font-size: 5rem;
+      height: unset;
+      width: unset;
+  }
+
+  p {
+      margin: 0;
+      font-size: .8rem;
+  }
+}
+
+input {
+  display: none;
+}

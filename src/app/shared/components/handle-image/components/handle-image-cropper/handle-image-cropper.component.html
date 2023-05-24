@@ -1,1 +1,53 @@
-<p>handle-image-cropper works!</p>
+<div class="control-buttons">
+
+  <button mat-flat-button (click)="toggleContainWithinAspectRatio()">{{containWithinAspectRatio?'Fill Aspect Ratio':'Contain Within Aspect Ratio'}}</button>
+
+  <button mat-icon-button matTooltip="Flip horizontal" (click)="flipHorizontal()">
+      <mat-icon>panorama_horizontal</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Flip vertical" (click)="flipVertical()">
+      <mat-icon>panorama_vertical</mat-icon>
+  </button>
+
+  <button mat-icon-button matTooltip="Rotar a la izquierda" (click)="rotateLeft()">
+      <mat-icon>rotate_left</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Rotar a la derecha" (click)="rotateRight()">
+      <mat-icon>rotate_right</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Restaurar" (click)="resetImage()">
+      <mat-icon>settings_backup_restore</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Zoom +" (click)="zoomIn()">
+      <mat-icon>zoom_in</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Zoom -" (click)="zoomOut()">
+      <mat-icon>zoom_out</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Eliminar" (click)="restore.emit()">
+      <mat-icon>delete_forever</mat-icon>
+  </button>
+</div>
+<div class="editor">
+  <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [containWithinAspectRatio]="containWithinAspectRatio"
+      [aspectRatio]="4 / 3"
+      [resizeToWidth]="256"
+      [cropperMinWidth]="128"
+      [onlyScaleDown]="true"
+      [roundCropper]="false"
+      [canvasRotation]="canvasRotation"
+      [transform]="transform"
+      [alignImage]="'left'"
+      [style.display]="showCropper ? null : 'none'"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()"
+      (cropperReady)="cropperReady($event)"
+      (loadImageFailed)="loadImageFailed()"
+  ></image-cropper>
+</div>
+<img [src]="croppedImage" class="cropp-image" />
+

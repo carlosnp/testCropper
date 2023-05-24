@@ -1,1 +1,16 @@
-<p>image-dropzone works!</p>
+<div class="dropzone"
+    (click)="openFileInput()"
+    (dragover)="allowDrop($event)"
+    (drop)="dropFile($event)"
+>
+    <mat-icon>panorama</mat-icon>
+    <p>Click para agregar o arrastra una imágen</p>
+</div>
+
+<input
+    type="file"
+    #fileInput
+    class="dropzone-input"
+    [accept]="accept"
+    (change)="inputFile($event)">
+
